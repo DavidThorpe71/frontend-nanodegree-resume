@@ -1,26 +1,25 @@
 var work = {
 	"jobs": [
 		{
-		"employer":,
-		"title":,
-		"location":,
-		"dates":,
-		"description":,
+		"employer": "NHS Camden CCG",
+		"title": "Senior Administrator",
+		"location": "London",
+		"dates": "2013-Current",
+		"description": "Spreadsheet maintenance and creation, recording of all data for projects"
 		},
 		{
-		"employer":,
-		"title":,
-		"location":,
-		"dates":,
-		"description":,
+		"employer": "The Audience Agency",
+		"title": "Data-Entry Administrator",
+		"location": "London",
+		"dates": "2013",
+		"description": "Data-entry"
 		},
 		{
-		"employer":,
-		"title":,
-		"location":,
-		"dates":,
-		"description":,
-		},
+		"employer": "Self-Employed",
+		"title": "Musician",
+		"location": "Reading/London",
+		"dates": "2005-2013",
+		"description": "Musician in a band, release of two albums, touring throughout UK, Europe and USA."}
 	]
 };
 
@@ -28,25 +27,23 @@ var work = {
 var projects = {
 	"projects": [
 		{
-		"title":,
-		"dates":,
-		"description":,
-		"images": ["url", "url", "url"],
-		}
+		"title": "Reflections",
+		"dates": "Sept.- Oct. 2016",
+		"description": "A GitHub repository containing my reflections on the Introduction to Git and GitHub course",
+		"images": ["images/reflectss.jpg"]
+		},
 		{
-		"title":,
-		"dates":,
-		"description":,
-		"images": ["url", "url", "url"],
-		}
+		"title": "Japan Trip",
+		"dates": "Aug. - Sept. 2016",
+		"description": "A website with a few basic details regarding my trip to Japan, to enable me to practice responsive web design.",
+		"images": ["images/japanss.jpg"]
+		},
 		{
-		"title":,
-		"dates":,
-		"description":,
-		"images": ["url", "url", "url"],
-		}
+		"title": "Animal Trading Cards",
+		"dates": "Aug. 2016",
+		"description": "A project making a single animal trading card to meet the specifications set by the Udacity team",
+		"images": ["images/tradingss.jpg"]}
 	]
-
 };
 
 
@@ -54,7 +51,7 @@ var bio = {
 	"name": "David Thorpe",
 	"role": "Web Developer",
 	"welcomeMessage": "Hello, I am a budding web developer looking for work!",
-	"bioPic": "images/fry.jpg"
+	"bioPic": "images/fry.jpg",
 	"contacts": {
 		"mobile": "07880878177",
 		"email": "vegas_71@yahoo.co.uk",
@@ -62,44 +59,61 @@ var bio = {
 		"twitter": "@davisthorpe",
 		"location": "London"
 		},
-	"skills": ["awesomeness", "programming", "learning", "JS"],
+	"skills": ["HTML", "CSS", "JS", "Excel"]
 };
 
 
 var education = {
 	"schools": [
 		{
-		"name": "Maiden Erlegh School",
-		"location": "Reading",
-		"degree dates": "A-Level",
-		"url": "",
-		"majors": ["Maths", "English", "Sociology"]
+		"name": "Bristol University of the West of England",
+		"location": "Bristol",
+		"degree dates": "2003-2004",
+		"url": "www.uwe.ac.uk",
+		"majors": ["English", "Film Studies"]
 		},
 		{
 		"name": "Maiden Erlegh School",
 		"location": "Reading",
-		"degree dates": "A-Level",
-		"url": "",
+		"degree dates": "1996-2001",
+		"url": "www.maidenerleghschool.co.uk",
 		"majors": ["Maths", "English", "Sociology"]
 		}
 	],
 	"onlineCourses": [
 		{
-		"title": "",
-		"school": "",
-		"dates": "",
-		"url": ""
+		"title": "Front-End Web Developer Nanodegree",
+		"school": "Udacity",
+		"dates": "Aug. 2016-Present",
+		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe3"
 		},
 		{
-		"title": "",
-		"school": "",
-		"dates": "",
-		"url": ""
-		},{
-		"title": "",
-		"school": "",
-		"dates": "",
-		"url": ""
-		}
+		"title": "Responsive Web Design Fundamentals",
+		"school": "Udacity",
+		"dates": "Aug. 2016",
+		"url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+		},
+		{
+		"title": "Responsive Images",
+		"school": "Udacity",
+		"dates": "Sept. 2016",
+		"url": "https://www.udacity.com/course/responsive-images--ud882"}
 	]
+};
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(formattedName);
+
+if(bio.skills != 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkill);
 };
