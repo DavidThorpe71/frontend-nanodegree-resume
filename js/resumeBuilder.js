@@ -117,3 +117,38 @@ if(bio.skills != 0) {
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 };
+
+function displayWork() {
+work.jobs.forEach(function(job){
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+		var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDescription);
+})
+};
+
+displayWork ();
+
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x,y);
+});
+
+$("#main").append(internationalizeButton);
+
+function inName() {
+	var names = bio.name.split(" ");
+	names[1] = names[1].toUpperCase();
+	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+	return names[0] + " " + names[1];
+}
