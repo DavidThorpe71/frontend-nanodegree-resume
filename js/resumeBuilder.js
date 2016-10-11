@@ -3,21 +3,21 @@ var work = {
 		{
 		"employer": "NHS Camden CCG",
 		"title": "Senior Administrator",
-		"location": "London",
+		"location": "London, England",
 		"dates": "2013-Current",
 		"description": "Spreadsheet maintenance and creation, recording of all data for projects"
 		},
 		{
 		"employer": "The Audience Agency",
 		"title": "Data-Entry Administrator",
-		"location": "London",
+		"location": "London, England",
 		"dates": "2013",
 		"description": "Data-entry"
 		},
 		{
 		"employer": "Self-Employed",
 		"title": "Musician",
-		"location": "Reading/London",
+		"location": "Reading, England",
 		"dates": "2005-2013",
 		"description": "Musician in a band, release of two albums, touring throughout UK, Europe and USA."}
 	]
@@ -67,14 +67,14 @@ var education = {
 	"schools": [
 		{
 		"name": "Bristol University of the West of England",
-		"location": "Bristol",
+		"location": "Bristol, England",
 		"degree dates": "2003-2004",
 		"url": "www.uwe.ac.uk",
 		"majors": ["English", "Film Studies"]
 		},
 		{
 		"name": "Maiden Erlegh School",
-		"location": "Reading",
+		"location": "Reading, England",
 		"degree dates": "1996-2001",
 		"url": "www.maidenerleghschool.co.uk",
 		"majors": ["Maths", "English", "Sociology"]
@@ -101,57 +101,63 @@ var education = {
 	]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(formattedName);
 
-if(bio.skills != 0) {
 
-	$("#header").append(HTMLskillsStart);
+top.display = function () {
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
+	
 
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
+	var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedbioPic);
+	var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedwelcomeMsg);
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	$("#topContacts").append(formattedTwitter);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
 };
 
-function displayWork() {
-work.jobs.forEach(function(job){
+top.display();
+
+
+
+if(bio.skills != 0) {
+	$("#header").append(HTMLskillsStart);
+
+	bio.skills.forEach(function(skill) {
+		var formattedSkill = HTMLskills.replace("%data%", skill);
+		$("#skills").append(formattedSkill);
+	});
+};
+
+
+work.display = function() {
+	work.jobs.forEach(function(job){
 		$("#workExperience").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
 		var formattedDates = HTMLworkDates.replace("%data%", job.dates);
 		var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
 		var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedLocation);
 		$(".work-entry:last").append(formattedDescription);
 })
 };
-
-displayWork ();
-
-// $(document).click(function(loc) {
-// 	var x = loc.pageX;
-// 	var y = loc.pageY;
-
-// 	logClicks(x,y);
-// });
-
-// $("#main").append(internationalizeButton);
-
-// function inName() {
-// 	var names = bio.name.split(" ");
-// 	names[1] = names[1].toUpperCase();
-// 	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
-// 	return names[0] + " " + names[1];
-// };
+work.display ();
 
 projects.display = function() {
 	projects.projects.forEach(function(project) {
