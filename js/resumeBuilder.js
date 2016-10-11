@@ -30,19 +30,19 @@ var projects = {
 		"title": "Reflections",
 		"dates": "Sept.- Oct. 2016",
 		"description": "A GitHub repository containing my reflections on the Introduction to Git and GitHub course",
-		"images": ["images/reflectss.jpg"]
+		"image": "images/reflectss.jpg"
 		},
 		{
 		"title": "Japan Trip",
 		"dates": "Aug. - Sept. 2016",
 		"description": "A website with a few basic details regarding my trip to Japan, to enable me to practice responsive web design.",
-		"images": ["images/japanss.jpg"]
+		"image": "images/japanss.jpg"
 		},
 		{
 		"title": "Animal Trading Cards",
 		"dates": "Aug. 2016",
 		"description": "A project making a single animal trading card to meet the specifications set by the Udacity team",
-		"images": ["images/tradingss.jpg"]}
+		"image": "images/tradingss.jpg"}
 	]
 };
 
@@ -137,18 +137,37 @@ work.jobs.forEach(function(job){
 
 displayWork ();
 
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
+// $(document).click(function(loc) {
+// 	var x = loc.pageX;
+// 	var y = loc.pageY;
 
-	logClicks(x,y);
+// 	logClicks(x,y);
+// });
+
+// $("#main").append(internationalizeButton);
+
+// function inName() {
+// 	var names = bio.name.split(" ");
+// 	names[1] = names[1].toUpperCase();
+// 	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+// 	return names[0] + " " + names[1];
+// };
+
+projects.display = function() {
+	projects.projects.forEach(function(project) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+		$(".project-entry:last").append(formattedTitle);
+		var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
+		$(".project-entry:last").append(formattedDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+		$(".project-entry:last").append(formattedDescription);
+		var formattedImage = HTMLprojectImage.replace("%data%", project.image);
+		$(".project-entry:last").append(formattedImage);
+
 });
-
-$("#main").append(internationalizeButton);
-
-function inName() {
-	var names = bio.name.split(" ");
-	names[1] = names[1].toUpperCase();
-	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
-	return names[0] + " " + names[1];
 }
+projects.display ();
+
+$("#mapDiv").append(googleMap);
