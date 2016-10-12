@@ -68,14 +68,14 @@ var education = {
 		{
 		"name": "Bristol University of the West of England",
 		"location": "Bristol, England",
-		"degree dates": "2003-2004",
+		"dates": "2003-2004",
 		"url": "www.uwe.ac.uk",
 		"majors": ["English", "Film Studies"]
 		},
 		{
 		"name": "Maiden Erlegh School",
 		"location": "Reading, England",
-		"degree dates": "1996-2001",
+		"dates": "1996-2001",
 		"url": "www.maidenerleghschool.co.uk",
 		"majors": ["Maths", "English", "Sociology"]
 		}
@@ -175,5 +175,34 @@ projects.display = function() {
 });
 }
 projects.display ();
+
+education.display = function() {
+	education.schools.forEach(function(school) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedName = HTMLschoolName.replace("%data%", school.name);
+		$(".education-entry:last").append(formattedName);
+		var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+		$(".education-entry:last").append(formattedDates);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+		$(".education-entry:last").append(formattedLocation);
+		var formattedMajors = HTMLschoolMajor.replace("%data%", school.majors);
+		$(".education-entry:last").append(formattedMajors);
+	});
+
+	$(".education-entry:last").append(HTMLonlineClasses);
+
+	education.onlineCourses.forEach(function(course) {
+		var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
+		$(".education-entry:last").append(formattedTitle);
+		var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
+		$(".education-entry:last").append(formattedSchool);
+		var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
+		$(".education-entry:last").append(formattedDates);
+		var formattedURL = HTMLonlineURL.replace("%data%", course.url);
+		$(".education-entry:last").append(formattedURL);
+	});
+}
+education.display ();
 
 $("#mapDiv").append(googleMap);
