@@ -202,8 +202,4 @@ education.display = function() {
 
 education.display();
 
-$("#twitDiv").append('<a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/davisthorpe">Tweets by davisthorpe</a>')
-
 $("#mapDiv").append(googleMap);
-
-
