@@ -105,11 +105,11 @@ a {
     display: none;
 }
 
-.orange {
+.green {
     background-color: rgb(184, 227, 210);
 }
 
-.orange-text {
+.green-text {
     color: rgb(184, 227, 210);
 }
 
@@ -219,7 +219,7 @@ span {
 
 @media only screen and (min-width: 750px) {
     #skills-h3,
-  .biopic {
+    .biopic {
         display: block;
     };
 }
