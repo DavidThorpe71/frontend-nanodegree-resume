@@ -189,6 +189,7 @@ span {
     .biopic {
         width: 175px;
     };
+
 }
 
 @media only screen and (max-width: 750px) {
@@ -222,4 +223,30 @@ span {
     .biopic {
         display: block;
     };
+}
+
+
+@media only screen and (min-width: 900px) {
+    #projects {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #projects h2 {
+        width: 100%;
+    }
+    .project-entry {
+        width: calc(70% / 3);
+    }
+
+    img {
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
 }
