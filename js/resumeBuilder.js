@@ -100,26 +100,32 @@ top.display = function() {
     var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
     $("#header").append(formattedbioPic);
     var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedwelcomeMsg);
+    $("#header").append(formattedwelcomeMsg)
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
-    $("#footerContacts").append(formattedMobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#topContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedEmail);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     $("#topContacts").append(formattedGithub);
-    $("#footerContacts").append(formattedGithub);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#topContacts").append(formattedTwitter);
-    $("#footerContacts").append(formattedTwitter);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
-    $("#footerContacts").append(formattedLocation);
 };
 
 top.display();
+
+// footer.display = function() {
+//     var formattedEmaillogo = HTMLemailLogo.replace("%data%", "zocial-yahoo");
+//     var formattedTwitterlogo = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
+//     var formattedGithublogo = HTMLgithubLogo.replace("%data%", "zocial-github");
+//     $("#footerContacts").append(formattedEmaillogo);
+//     $("#footerContacts").append(formattedTwitterlogo);
+//     $("#footerContacts").append(formattedGithublogo);  
+// };
+
+// footer.display();
 
 
 bio.display = function() {
