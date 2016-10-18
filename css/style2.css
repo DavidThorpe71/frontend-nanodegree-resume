@@ -1,0 +1,54 @@
+#main {
+	max-width: 800px;
+	margin: auto;
+}
+
+#main,
+#header,
+#workExperience,
+#projects,
+#education,
+#lets-connect,
+h2,
+h3 {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Karla', sans-serif;
+	width: 100%;
+}
+
+.work-entry {
+	width: 100%;
+}
+
+.project-entry {
+	width: calc((100% - 20px) / 3);
+	margin-right: 10px;
+}
+
+.project-entry:last-of-type {
+	margin-right: 0;
+}
+
+.education-entry {
+	width: 50%;
+}
+
+#map {
+   height: 100%;
+ }
+
+#mapDiv {
+    height: 400px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
