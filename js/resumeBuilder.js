@@ -100,7 +100,7 @@ top.display = function() {
     var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
     $("#header").append(formattedbioPic);
     var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedwelcomeMsg)
+    $("#header").append(formattedwelcomeMsg);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
