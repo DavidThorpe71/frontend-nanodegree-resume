@@ -112,20 +112,16 @@ top.display = function() {
     $("#topContacts").append(formattedTwitter);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
+
+    var formattedEmail = HTMLemailLogo.replace("%data%", "zocial-yahoo");
+    $("#footerContacts").append(formattedEmail);
+    var formattedTwitter = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
+    $("#footerContacts").append(formattedTwitter);
+    var formattedGithub = HTMLgithubLogo.replace("%data%", "zocial-github");
+    $("#footerContacts").append(formattedGithub);
 };
 
 top.display();
-
-// footer.display = function() {
-//     var formattedEmaillogo = HTMLemailLogo.replace("%data%", "zocial-yahoo");
-//     var formattedTwitterlogo = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
-//     var formattedGithublogo = HTMLgithubLogo.replace("%data%", "zocial-github");
-//     $("#footerContacts").append(formattedEmaillogo);
-//     $("#footerContacts").append(formattedTwitterlogo);
-//     $("#footerContacts").append(formattedGithublogo);  
-// };
-
-// footer.display();
 
 
 bio.display = function() {
@@ -174,6 +170,7 @@ projects.display = function() {
         $(".project-entry:last").append(formattedImage);
     });
 };
+
 projects.display();
 
 
