@@ -47,10 +47,10 @@ var bio = {
     "welcomeMessage": "Hello, I am a budding web developer looking for work!",
     "bioPic": "images/profile.jpg",
     "contacts": {
-        "mobile": "07880878177",
-        "email": "vegas_71@yahoo.co.uk",
+        "mobile": "07770777177",
+        "email": "david@thorpe.com",
         "github": "DavidThorpe71",
-        "twitter": "@davisthorpe",
+        "twitter": "@david",
         "location": "London"
     },
     "skills": ["HTML", "CSS", "JS", "Excel"]
@@ -104,19 +104,21 @@ top.display = function() {
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
-    $("#footerContacts").append(formattedMobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#topContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedEmail);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     $("#topContacts").append(formattedGithub);
-    $("#footerContacts").append(formattedGithub);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#topContacts").append(formattedTwitter);
-    $("#footerContacts").append(formattedTwitter);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
-    $("#footerContacts").append(formattedLocation);
+
+    var formattedEmail = HTMLemailLogo.replace("%data%", "zocial-yahoo");
+    $("#footerContacts").append(formattedEmail);
+    var formattedTwitter = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
+    $("#footerContacts").append(formattedTwitter);
+    var formattedGithub = HTMLgithubLogo.replace("%data%", "zocial-github");
+    $("#footerContacts").append(formattedGithub);
 };
 
 top.display();
@@ -168,6 +170,7 @@ projects.display = function() {
         $(".project-entry:last").append(formattedImage);
     });
 };
+
 projects.display();
 
 

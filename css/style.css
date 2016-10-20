@@ -89,6 +89,10 @@ a {
     display: block;
 }
 
+a:hover {
+    color: rgb(169, 156, 200);
+}
+
 .welcome-message {
     font-style: italic;
     font-size: 18px;
@@ -128,9 +132,8 @@ a {
     background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-    background-color: rgb(25, 85, 158);
+    background: rgb(25, 85, 158);
 }
 
 .flex-box {
@@ -189,7 +192,6 @@ span {
     .biopic {
         width: 175px;
     };
-
 }
 
 @media only screen and (max-width: 750px) {
@@ -225,7 +227,6 @@ span {
     };
 }
 
-
 @media only screen and (min-width: 900px) {
     #projects {
         display: flex;
@@ -236,6 +237,7 @@ span {
     #projects h2 {
         width: 100%;
     }
+
     .project-entry {
         width: calc(70% / 3);
     }
@@ -243,10 +245,10 @@ span {
     img {
         max-width: 100%;
         margin: auto;
-    }
+    };
 }
 
 /* zocial */
 [class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
+    font-family: 'zocial', sans-serif;
 }
