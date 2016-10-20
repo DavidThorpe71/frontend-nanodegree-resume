@@ -47,10 +47,10 @@ var bio = {
     "welcomeMessage": "Hello, I am a budding web developer looking for work!",
     "bioPic": "images/profile.jpg",
     "contacts": {
-        "mobile": "07880878177",
-        "email": "vegas_71@yahoo.co.uk",
+        "mobile": "07770777177",
+        "email": "david@thorpe.com",
         "github": "DavidThorpe71",
-        "twitter": "@davisthorpe",
+        "twitter": "@david",
         "location": "London"
     },
     "skills": ["HTML", "CSS", "JS", "Excel"]

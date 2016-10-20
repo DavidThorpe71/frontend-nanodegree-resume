@@ -9,9 +9,9 @@ var HTMLgithub = '<li class="flex-item"><span class="green-text">github</span><s
 var HTMLblog = '<li class="flex-item"><span class="green-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="green-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLemailLogo = '<li class="flex-item"><span class="white-text %data%">yahoo</span></li>';
-var HTMLtwitterLogo = '<li class="flex-item"><span class="white-text %data%"></span></li>';
-var HTMLgithubLogo = '<li class="flex-item"><span class="white-text %data%"></span></li>';
+var HTMLemailLogo = '<li class="flex-item"><a href="#" class="white-text %data%"></a></li>';
+var HTMLtwitterLogo = '<li class="flex-item"><a href="#" class="white-text %data%"></a></li>';
+var HTMLgithubLogo = '<li class="flex-item"><a href="#" class="white-text %data%"></a></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
