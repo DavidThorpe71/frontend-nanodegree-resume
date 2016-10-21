@@ -113,12 +113,12 @@ top.display = function() {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
 
-    var formattedEmail = HTMLemailLogo.replace("%data%", "zocial-yahoo");
-    $("#footerContacts").append(formattedEmail);
-    var formattedTwitter = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
-    $("#footerContacts").append(formattedTwitter);
-    var formattedGithub = HTMLgithubLogo.replace("%data%", "zocial-github");
-    $("#footerContacts").append(formattedGithub);
+    var formattedEmailfoot = HTMLemailLogo.replace("%data%", "zocial-yahoo");
+    $("#footerContacts").append(formattedEmailfoot);
+    var formattedTwitterfoot = HTMLtwitterLogo.replace("%data%", "zocial-twitter");
+    $("#footerContacts").append(formattedTwitterfoot);
+    var formattedGithubfoot = HTMLgithubLogo.replace("%data%", "zocial-github");
+    $("#footerContacts").append(formattedGithubfoot);
 };
 
 top.display();
