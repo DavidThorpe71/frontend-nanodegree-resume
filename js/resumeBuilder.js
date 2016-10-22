@@ -163,11 +163,11 @@ projects.display = function() {
         $(".project-entry:last").append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace(data, project.description);
         $(".project-entry:last").append(formattedDescription);
-        
+
         project.images.forEach(function(image) {
             var formattedImage = HTMLprojectImage.replace(data, image);
-            $(".project-entry:last").append(formattedImage);  
-        }); 
+            $(".project-entry:last").append(formattedImage);
+        });
     });
 };
 
