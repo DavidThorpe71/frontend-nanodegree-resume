@@ -178,7 +178,8 @@ education.display = function() {
     education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
 
-        var formattedName = HTMLschoolName.replace(data, school.name);
+        var formattedLink = HTMLschoolName.replace('#', school.url);
+        var formattedName = formattedLink.replace(data, school.name);
         $(".education-entry:last").append(formattedName);
         var formattedDates = HTMLschoolDates.replace(data, school.dates);
         $(".education-entry:last").append(formattedDates);
@@ -198,8 +199,9 @@ education.display = function() {
         $(".education-entry:last").append(formattedTitle + formattedSchool);
         var formattedDates = HTMLonlineDates.replace(data, course.dates);
         $(".education-entry:last").append(formattedDates);
-        var formattedURL = HTMLonlineURL.replace(data, course.url);
-        $(".education-entry:last").append(formattedURL);
+        var formattedURL = HTMLonlineURL.replace('#', course.url);
+        var formattedURLname = formattedURL.replace(data, 'link');
+        $(".education-entry:last").append(formattedURLname);
     });
 };
 
